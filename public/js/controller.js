@@ -1,1 +1,27 @@
-angular.module("todoApp.login").controller("todoApp.login.ctrl",function(){console.log("todoApp.login")}),angular.module("todoApp.menu").controller("todoApp.menu.ctrl",function(){this.options={language:"en",allowedContent:!0,entities:!1},this.onReady=function(){console.log("onReady")},console.log("todoApp.menu.ctrl")}),angular.module("todoApp.menu").controller("sub.menu.ctrl",function(){console.log("sub.menu.ctrl")});
+angular.module('todoApp.login')
+.controller('todoApp.login.ctrl', function() {
+    var todoList = this;
+    todoList.load=function(d){
+        window.open('/menu');
+    }
+    console.log('todoApp.login');
+});
+angular.module('todoApp.menu')
+.controller('todoApp.menu.ctrl', function() {
+    var todoList = this;
+     todoList.options = {
+        language: 'en',
+        allowedContent: true,
+        entities: false
+      };
+  // Called when the editor is completely ready.
+    todoList.onReady = function () {
+      console.log("onReady");
+    };
+    console.log('todoApp.menu.ctrl');
+});
+angular.module('todoApp.menu')
+.controller('sub.menu.ctrl', function() {
+    var todoList = this;
+    console.log('sub.menu.ctrl');
+});

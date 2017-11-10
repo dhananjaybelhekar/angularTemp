@@ -8,4 +8,4 @@ angular.module('todoApp.login', ['ui.router'])
   	controller:'todoApp.login.ctrl'
     });
 
-})
+});

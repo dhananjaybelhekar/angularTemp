@@ -1,4 +1,3 @@
-
 angular.module('todoApp.login', ['ui.router'])
 .config(function($stateProvider,$urlRouterProvider,$locationProvider) {
   // $locationProvider.html5Mode(true);
@@ -22,7 +21,7 @@ angular.module('todoApp.menu', ['ui.router','ckeditor'])
     })
   	.state('menu.sub', {
     url: '/sub',
-	templateUrl: 'public/sub/sub.html',
+	templateUrl: 'public/menu/sub/sub.html',
  	controller:'sub.menu.ctrl'
     });
 });

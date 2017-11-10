@@ -10,7 +10,7 @@ angular.module('todoApp.menu', ['ui.router','ckeditor'])
     })
   	.state('menu.sub', {
     url: '/sub',
-	templateUrl: 'public/sub/sub.html',
+	templateUrl: 'public/menu/sub/sub.html',
  	controller:'sub.menu.ctrl'
     });
 });
