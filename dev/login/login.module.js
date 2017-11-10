@@ -5,7 +5,7 @@ angular.module('todoApp.login', ['ui.router'])
   $stateProvider.state('login', {
     url: '/login',
 	templateUrl: 'public/login/login.html',
-  	controller:'todoApp.login.ctrl'
+  	controller:'todoApp.login.ctrl as todoList'
     });
 
 });
