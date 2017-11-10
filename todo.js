@@ -58,7 +58,7 @@ angular.module('todoApp', [
     console.log('TodoListController');
 }).config(function($stateProvider,$urlRouterProvider,$locationProvider) {
 $urlRouterProvider.otherwise('/login');
-  $locationProvider.html5Mode(true);
+$locationProvider.html5Mode(true);
  //  $stateProvider.state('menu', {
  //    url: '/menu',
 	// templateUrl: 'menu.html',
