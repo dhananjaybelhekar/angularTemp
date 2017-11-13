@@ -42,6 +42,7 @@ gulp.task('vendor', function() {
 
 gulp.task('vcss', function() {
     return gulp.src([
+  'style.css',
   'bower_components/bootstrap/dist/css/bootstrap.css',
   'bower_components/font-awesome/css/font-awesome.css',
   'bower_components/rdash-ui/dist/css/rdash.css'
