@@ -8,14 +8,6 @@ var cssnano = require('gulp-cssnano');
 //livereload = require('gulp-livereload');
 
 
-
-
-
-
-'vendor','vendor.min', 'vcss','vcss.min', 'module','controller', 'html'
-
-
-
 gulp.task('vendor', function() {
     return gulp.src([
 'bower_components/angular/angular.js',
@@ -109,5 +101,5 @@ gulp.task('html', function () {
 
 
 
-gulp.task('jsinit', ['vendor','vendor.min', 'vcss','vcss.min', 'module','controller', 'html']);
-gulp.task('default', ['module','controller','html','vendor','vcss','vendor.min','vcss.min','jsinit']);
+gulp.task('default', ['vendor','vendor.min', 'vcss','vcss.min', 'module','controller', 'html']);
+//gulp.task('default', ['module','controller','html','vendor','vcss','vendor.min','vcss.min','jsinit']);
