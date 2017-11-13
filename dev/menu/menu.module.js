@@ -1,4 +1,4 @@
-angular.module('todoApp.menu', ['ui.router','ckeditor','ngCookies'])
+angular.module('todoApp.menu', ['ui.router','ckeditor','ngCookies','ngResource'])
 .config(function($stateProvider,$urlRouterProvider,$locationProvider) {
 // $urlRouterProvider.otherwise('/menu');
 //   $locationProvider.html5Mode(true);

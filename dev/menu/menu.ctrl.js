@@ -1,7 +1,13 @@
 angular.module('todoApp.menu')
-.controller('todoApp.menu.ctrl', function($scope,$cookieStore) {
+.controller('todoApp.menu.ctrl', function($scope,$cookieStore,$resource) {
     var todoList = this;
 
+
+var x= $resource('https://jsonplaceholder.typicode.com/posts',{},{get:{method:"GET",isArray:true}});
+
+x.get({}).$promise.then(function(data){
+  console.log(data);
+})
       $scope.toggleSidebar = function() {
         $scope.toggle = !$scope.toggle;
         $cookieStore.put('toggle', $scope.toggle);
