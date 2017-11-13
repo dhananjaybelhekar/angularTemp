@@ -3,7 +3,7 @@ angular.module('todoApp.login')
     var todoList = this;
     todoList.d= 456;
     todoList.load=function(d){
-        window.open('/menu');
+        window.open('/menu','_self')
     }
     console.log('todoApp.login');
 });
