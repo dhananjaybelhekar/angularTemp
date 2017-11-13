@@ -2,10 +2,58 @@
  const gulp = require('gulp');
  var concat = require('gulp-concat');
  var uglify = require('gulp-uglify');
+ var pump = require('pump');
 //var gulpCopy = require('gulp-copy');
-//var cssnano = require('gulp-cssnano');
+var cssnano = require('gulp-cssnano');
 //livereload = require('gulp-livereload');
-var pump = require('pump');
+
+
+
+
+
+
+'vendor','vendor.min', 'vcss','vcss.min', 'module','controller', 'html'
+
+
+
+gulp.task('vendor', function() {
+    return gulp.src([
+'bower_components/angular/angular.js',
+'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+'bower_components/angular-cookies/angular-cookies.min.js',
+'bower_components/angular-ui-router/release/angular-ui-router.js',
+'bower_components/angular-resource/angular-resource.js',
+'bower_components/angular-ckeditor/angular-ckeditor.js'
+        ])
+      .pipe(concat('vendor.js'))
+      .pipe(gulp.dest('./public/'));
+  });
+
+
+  gulp.task('vendor.min', function (cb) {
+    pump([
+          gulp.src('./public/vendor.js'),
+          uglify(),
+          gulp.dest('./public/js/')
+      ],
+      cb
+    );
+  });
+
+gulp.task('vcss', function() {
+    return gulp.src([
+  'bower_components/bootstrap/dist/css/bootstrap.css',
+  'bower_components/font-awesome/css/font-awesome.css',
+  'bower_components/rdash-ui/dist/css/rdash.css'
+  ])
+    .pipe(concat('vendor.css'))
+      .pipe(gulp.dest('./public/'));
+  });
+gulp.task('vcss.min', function() {
+    return gulp.src('./public/vendor.css')
+        .pipe(cssnano())
+        .pipe(gulp.dest('./public/css/'));
+});
 
 gulp.task('module', function() {
     return gulp.src([
@@ -56,4 +104,9 @@ gulp.task('html', function () {
 // });
 
 //gulp.task('default', ['module','module.min','controller','controller.min','html']);
-gulp.task('default', ['module','controller','html']);
+
+
+
+
+gulp.task('jsinit', ['vendor','vendor.min', 'vcss','vcss.min', 'module','controller', 'html']);
+gulp.task('default', ['module','controller','html','vendor','vcss','vendor.min','vcss.min','jsinit']);
