@@ -16,6 +16,7 @@ x.get({}).$promise.then(function(data){
      todoList.options = {
         language: 'en',
         allowedContent: true,
+        fullPage: true,
         entities: false
       };
   // Called when the editor is completely ready.
